@@ -1,0 +1,22 @@
+{
+  "name": "gig-matrix-mern",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "workspaces": [
+    "backend",
+    "frontend"
+  ],
+  "scripts": {
+    "dev": "concurrently \"npm:dev:backend\" \"npm:dev:frontend\"",
+    "dev:backend": "npm run dev --workspace backend",
+    "dev:frontend": "npm run dev --workspace frontend",
+    "start": "npm run start --workspace backend",
+    "build": "npm run build --workspace frontend",
+    "test": "node --test backend/test/*.test.js",
+    "migrate:mysql": "npm run migrate:mysql --workspace backend"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}
