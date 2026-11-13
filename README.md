@@ -51,6 +51,22 @@ frontend/
 
 4. Open <http://localhost:5173>. The API listens on <http://localhost:5001> (the port configured in `.env`).
 
+## Sample data
+
+With `MONGODB_URI` pointing to your development database and `NODE_ENV` not set to `production`, run:
+
+```sh
+npm run seed
+```
+
+The repeatable seed creates or updates demo accounts, profiles, three jobs, two applications, and a sample conversation. All demo accounts use the password `GigMatrixDemo2026!`:
+
+- Project owner: `demo.developer@gigmatrix.test`
+- Freelancer: `demo.freelancer@gigmatrix.test`
+- Designer: `demo.designer@gigmatrix.test`
+
+The seed command refuses to run when `NODE_ENV=production`. The sample credentials are public demo credentials and must not be used in a deployed environment.
+
 For production, set `NODE_ENV=production`, set `CLIENT_ORIGIN` to the app origin, then run `npm run build` and `npm start`. Express serves the built React app and API from the same origin.
 
 ## Existing MySQL data
